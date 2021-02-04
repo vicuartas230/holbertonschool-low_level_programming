@@ -1,13 +1,16 @@
 #include <stdio.h>
-/*
- *This code shows all letters of alphabet
+/**
+ * main - Entry point
+ *
+ * Return: 0 (Success)
  */
 
 int main(void)
 {
-	for (int a = 97; a < 123; a++)
-	{
+	int a;
+
+	for (a = 97; a < 123; a++)
 		putchar(a);
-	}
+		putchar('\n');
 	return (0);
 }
