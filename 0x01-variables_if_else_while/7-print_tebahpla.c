@@ -1,14 +1,18 @@
 #include <stdio.h>
 
-/*
- *This program contains the alphabet in reverse
+/**
+ * main - Entry point
+ * Return: 0 (Succes)
  */
 
 int main(void)
 {
-	for (int a=122; a>96; a--)
+	int a;
+
+	for (a = 122; a > 96; a--)
 	{
 		putchar(a);
 	}
+	putchar('\n');
 	return (0);
 }
