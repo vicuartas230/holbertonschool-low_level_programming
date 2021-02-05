@@ -1,14 +1,18 @@
 #include <stdio.h>
 
-/*
- *This program prints all single digit numbers of base 10
+/**
+ * main - Entry point
+ * Return: 0 (Success)
  */
 
 int main(void)
 {
-	for (int a = 0; a <= 9; a++)
+	int a;
+
+	for (a = 0; a <= 9; a++)
 	{
-		printf("%i", a);
+		printf("%d", a);
 	}
+	putchar('\n');
 	return (0);
 }
