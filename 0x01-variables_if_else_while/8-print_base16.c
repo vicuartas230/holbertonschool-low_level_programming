@@ -1,18 +1,23 @@
 #include <stdio.h>
 
-/*
- *This program prints all the numbers of base 16
+/**
+ * main - Entry point
+ * Return: 0 (Success)
  */
 
 int main(void)
 {
-	for (int a = 48; a <= 57; a++)
+	int a;
+	int b;
+
+	for (a = 48; a <= 57; a++)
 	{
 		putchar(a);
 	}
-	for (int b = 97; b <= 102; b++)
+	for (b = 97; b <= 102; b++)
 	{
 		putchar(b);
 	}
+	putchar('\n');
 	return (0);
 }
