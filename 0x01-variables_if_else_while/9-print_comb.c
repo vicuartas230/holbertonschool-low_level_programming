@@ -1,17 +1,20 @@
 #include <stdio.h>
 
-/*
- *This program prints all possible combinations of single
- *digit-numbers
+/**
+ * main - Entry point
+ * Return: 0 (Success)
  */
 
 int main(void)
 {
-	for (int a = 48; a <= 57; a++)
+	int a;
+
+	for (a = 48; a <= 57; a++)
 	{
 		putchar(a);
 		putchar(44);
 		putchar(32);
 	}
+	putchar('\n');
 	return (0);
 }
