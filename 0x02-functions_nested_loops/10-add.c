@@ -15,5 +15,13 @@ int add(int a, int b)
 	int suma;
 
 	suma = a + b;
-	return (suma + '0');
+	if (suma < 10)
+	{
+		_putchar(suma + '0');
+		return (suma);
+	}
+	else
+	{
+		return (suma);
+	}
 }
