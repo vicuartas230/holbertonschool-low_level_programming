@@ -13,9 +13,9 @@ int main(void)
 
 	i = 0;
 
-	while (i < 10) /*Inside this loop should have a expression that increase the variable i*/
+	while (i < 10)
 	{
-		putchar(i);
+		putchar(i); /*Inside this loop should have a expression that increase the variable i*/
 	} 
 
 	printf("Infinite loop avoided! \\o/\n");
