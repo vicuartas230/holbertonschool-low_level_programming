@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
  * main - Fizz-Buzz
@@ -28,7 +27,7 @@ int main(void)
 		else
 		{
 			printf("%d ", a);
-				}
+		}
 	}
 	putchar('\n');
 	return (0);
