@@ -1,0 +1,1 @@
+This file contains the inofrmation about the pointers and arrays tasks
