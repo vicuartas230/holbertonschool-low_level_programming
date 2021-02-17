@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include "2-strlen.c"
 
 /**
  * puts2 - This function prints every other character of a string
@@ -12,7 +13,7 @@ void puts2(char *str)
 {
 	int a;
 
-	for (a = 0; str[a] != '\0'; a += 2)
+	for (a = 0; a < _strlen(str); a += 2)
 	{
 		_putchar(str[a]);
 	}
