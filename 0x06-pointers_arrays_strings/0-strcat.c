@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <string.h>
 
 /**
  * _strcat - This function concatenates two strings
@@ -11,13 +10,11 @@
 char *_strcat(char *dest, char *src)
 {
 	unsigned int a, c;
-	char *p;
 
 	c = strlen(dest);
 	for (a = 0; a < strlen(src); ++a)
 	{
 		*(dest + (c + a)) = src[a];
 	}
-	p = dest;
-	return (p);
+	return (dest);
 }
