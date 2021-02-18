@@ -1,0 +1,1 @@
+This file contains the information about pointers, strings and arrays
