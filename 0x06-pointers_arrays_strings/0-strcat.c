@@ -11,11 +11,13 @@
 char *_strcat(char *dest, char *src)
 {
 	unsigned int a, c;
+	char *p;
 
 	c = strlen(dest);
 	for (a = 0; a < strlen(src); ++a)
 	{
 		*(dest + (c + a)) = src[a];
 	}
-	return (dest);
+	p = dest;
+	return (p);
 }
