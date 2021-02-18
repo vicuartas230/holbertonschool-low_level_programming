@@ -9,12 +9,15 @@
 
 char *_strcat(char *dest, char *src)
 {
-	unsigned int a, c;
+	unsigned int a, b;
 
-	c = strlen(dest);
-	for (a = 0; a < strlen(src); ++a)
+	for (b = 0; src[b] != '\0'; ++b)
 	{
-		*(dest + (c + a)) = src[a];
+	}
+	b--;
+	for (a = 0; a <= b; ++a)
+	{
+		*(dest + (b + a)) = src[a];
 	}
 	return (dest);
 }
