@@ -15,9 +15,16 @@ char *_strcat(char *dest, char *src)
 	{
 	}
 	b--;
-	for (a = 0; a <= b; ++a)
+	for (a = 0; a <= b + 1; ++a)
 	{
-		*(dest + (b + a)) = src[a];
+		if (a < (b + 1))
+		{
+			*(dest + (b + a)) = src[a];
+		}
+		else
+		{
+			dest[a + b] = '\0';
+		}
 	}
 	return (dest);
 }
