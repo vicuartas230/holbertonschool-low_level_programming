@@ -9,8 +9,7 @@
 
 char *_strcat(char *dest, char *src)
 {
-	unsigned int a, b;
-	char *p;
+	int a, b;
 
 	for (b = 0; src[b] != '\0'; ++b)
 	{
@@ -21,6 +20,5 @@ char *_strcat(char *dest, char *src)
 		*(dest + (b + a)) = src[a];
 	}
 	dest[a + b] = '\0';
-	p = dest;
-	return (p);
+	return (dest);
 }
