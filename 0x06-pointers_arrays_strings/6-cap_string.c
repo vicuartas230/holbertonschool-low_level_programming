@@ -27,6 +27,10 @@ char *cap_string(char *str)
 				str[a + 1] = str[a + 1] - 32;
 			}
 		}
+		else if (str[0] >= 'a' && str[0] <= 'z')
+		{
+			str[0] = str[0] - 32;
+		}
 	}
 	return (str);
 }
