@@ -6,17 +6,17 @@
  * Return: 0 (Success)
  */
 
-char *rot13(char *)
+char *rot13(char *c)
 {
-	int a, b;
+	int a;
 
 	for (a = 0; c[a] != '\0'; a++)
 	{
-		if (c[a] >= 'a' && c[a] <= 'm' || c[a] >= 'A' && c[a] <= 'M')
+		if (((c[a] >= 'a') && (c[a] <= 'm')) || ((c[a] >= 'A') && (c[a] <= 'M')))
 		{
 			c[a] = c[a] + 13;
 		}
-		else if (c[a] >= 'n' && c[a] <= 'z' || c[a] >= 'N' && c[a] <= 'Z')
+		else if ((c[a] >= 'n' && c[a] <= 'z') || (c[a] >= 'N' && c[a] <= 'Z'))
 		{
 			c[a] = c[a] - 13;
 		}
