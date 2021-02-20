@@ -8,17 +8,19 @@
 
 char *rot13(char *c)
 {
-	int a;
+	int a, b;
+	char *dig = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char *cod = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	for (a = 0; c[a] != '\0'; a++)
 	{
-		if (((c[a] >= 'a') && (c[a] <= 'm')) || ((c[a] >= 'A') && (c[a] <= 'M')))
+		for (b = 0; dig[b] && cod[b] != '\0'; b++)
 		{
-			c[a] = c[a] + 13;
-		}
-		else if ((c[a] >= 'n' && c[a] <= 'z') || (c[a] >= 'N' && c[a] <= 'Z'))
-		{
-			c[a] = c[a] - 13;
+			if (c[a] == dig[b])
+			{
+				c[a] = cod[b];
+				break;
+			}
 		}
 	}
 	return (c);
