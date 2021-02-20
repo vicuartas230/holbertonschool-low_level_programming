@@ -9,11 +9,11 @@
 char *leet(char *s)
 {
 	int m, n;
-	char low = "aeotl", upp = "AEOTL", asg = "43071";
+	char *low = "aeotl", *upp = "AEOTL", *asg = "43071";
 
-	for (m = 0; s[m] != NULL; m++)
+	for (m = 0; s[m] != '\0'; m++)
 	{
-		for (n = 0; low[n] && upp[n] != NULL; n++)
+		for (n = 0; low[n] && upp[n] != '\0'; n++)
 		{
 			if (s[m] == low[n] || s[m] == upp[n])
 			{
@@ -22,4 +22,5 @@ char *leet(char *s)
 			}
 		}
 	}
+	return (s);
 }
