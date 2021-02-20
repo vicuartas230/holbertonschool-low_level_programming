@@ -9,8 +9,17 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	if (s1 == s2)
-		return (0);
-	else
-		return (s1 - s2);
+	int a;
+
+	for (a = 0; s1[a] && s2[a] != '\0'; a++)
+	{
+		if (s1[a] != s2[a])
+		{
+			return (s1[a] - s2[a]);
+		}
+		else
+		{
+			return (0);
+		}
+	}
 }
