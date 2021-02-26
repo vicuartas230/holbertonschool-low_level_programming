@@ -21,3 +21,5 @@ int is_prime_number(int n);
 int is_palindrome(char *s);
 
 int checking(int l, int m);
+
+int primes(int e, int c);
