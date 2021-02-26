@@ -1,0 +1,1 @@
+This directory contains the information about the static libraries
