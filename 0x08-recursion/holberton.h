@@ -23,3 +23,5 @@ int is_palindrome(char *s);
 int checking(int l, int m);
 
 int primes(int e, int c);
+
+int checkString(char *s, int size, int c);
