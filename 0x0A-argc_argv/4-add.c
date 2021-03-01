@@ -1,3 +1,4 @@
+#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -11,6 +12,7 @@
 int main(int argc, char *argv[])
 {
 	int a, b = 0;
+	unsigned int c;
 
 	if (argc == 1)
 	{
@@ -19,10 +21,13 @@ int main(int argc, char *argv[])
 	}
 	for (a = 1; a < argc; a++)
 	{
-		if (*argv[a] < '0' || *argv[a] > '9')
+		for (c = 0; c < strlen(argv[a]); c++)
 		{
-			printf("Error\n");
-			return (1);
+			if (argv[a][c] < '0' || argv[a][c] > '9')
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
 		b = b + atoi(argv[a]);
 	}
