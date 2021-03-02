@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <string.h>
 #include "holberton.h"
 
 /**
@@ -14,6 +16,10 @@ char *create_array(unsigned int size, char c)
 	char *a;
 
 	d = size * sizeof(char);
+	if (c == '\0')
+	{
+		return (NULL);
+	}
 	if (size == 0)
 	{
 		return ('\0');
