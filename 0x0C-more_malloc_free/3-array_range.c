@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include "2-calloc.c"
 #include <stdlib.h>
 
 /**
@@ -15,7 +14,7 @@ int *array_range(int min, int max)
 
 	if (min > max)
 		return (NULL);
-	arr = _calloc((max - min) + 1, sizeof(int));
+	arr = malloc((max - min + 1) * sizeof(int));
 	if (arr == NULL)
 		return (NULL);
 	for (a = min; a <= max; a++)
