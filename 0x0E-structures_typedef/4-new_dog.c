@@ -11,13 +11,38 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	struct dog *dog_t;
+	int i;
+	struct dog *dog_c;
 
-	dog_t = malloc(sizeof(struct dog));
-	if (dog_t == NULL)
+	if (name == NULL || owner == NULL)
 		return (NULL);
-	dog_t->name = name;
-	dog_t->age = age;
-	dog_t->owner = owner;
-	return (dog_t);
+	dog_c = malloc(sizeof(struct dog));
+	if (dog_c == NULL)
+		return (NULL);
+	dog_c->name = malloc(l(name) * sizeof(char));
+	if (dog_c->name == NULL)
+		return (NULL);
+	dog_c->owner = malloc(l(owner) * sizeof(char));
+	if (dog_c->owner == NULL)
+		return (NULL);
+	for (i = 0; i < l(name); i++)
+		dog_c->name[i] = name[i];
+	for (i = 0; i < l(owner); i++)
+		dog_c->owner[i] = owner[i];
+	dog_c->age = age;
+	return (dog_c);
+}
+/**
+ * l - This function returns the length of the string.
+ * @s: The string to meter.
+ * Return: The length.
+ */
+
+int l(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{}
+	return (i + 1);
 }
