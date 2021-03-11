@@ -20,9 +20,19 @@ int main(int ac, char *av[])
 		exit(98);
 	}
 	m = get_op_func(av[2]);
+	if (m == NULL)
+	{
+		printf("Error\n");
+		exit(99);
+	}
 	x = atoi(av[1]);
 	y = atoi(av[3]);
 	res = (*m)(x, y);
+	if (res == -1)
+	{
+		printf("Error\n");
+		exit(100);
+	}
 	printf("%d\n", res);
 	return (0);
 }
