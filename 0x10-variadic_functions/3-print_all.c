@@ -22,8 +22,6 @@ void print_all(const char * const format, ...)
 	va_list ar;
 	char *e = "", *f = ", ";
 
-	if (format == NULL)
-		exit(-1);
 	va_start(ar, format);
 	while (format[a] != '\0')
 	{
