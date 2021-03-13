@@ -23,7 +23,7 @@ void print_all(const char * const format, ...)
 	char *e = "", *f = ", ";
 
 	va_start(ar, format);
-	while (format[a] != '\0')
+	while (format != '\0' && format[a] != '\0')
 	{
 		b = 0;
 		while (sign[b].s != NULL)
