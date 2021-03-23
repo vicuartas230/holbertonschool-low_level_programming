@@ -20,5 +20,5 @@ int pop_listint(listint_t **head)
 		*head = aux;
 		return (data);
 	}
-	return (-1);
+	return ('\0');
 }
