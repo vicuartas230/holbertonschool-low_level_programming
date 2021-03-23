@@ -26,7 +26,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 				i++;
 			}
 			if (aux == NULL)
-					return (-1);
+				return (-1);
 			aux2 = aux;
 			aux2 = aux2->next;
 			aux->next = aux2->next;
