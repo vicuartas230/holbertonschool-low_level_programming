@@ -10,11 +10,11 @@
 
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	int b[1024], *p;
+	int b[2048], *p;
 	unsigned int i = 0;
 
 	dectobin(n, b);
-	p = &(b[1023]);
+	p = &(b[2047]);
 	while (*p != 2)
 	{
 		if (i == index)
@@ -42,7 +42,7 @@ void dectobin(unsigned long int *n, int *b)
 
 	*(b + i) = 2;
 	i++;
-	while (i < 1024)
+	while (i < 2048)
 	{
 		*(b + i) = 0;
 		i++;
@@ -68,7 +68,7 @@ void bintodec(int *b, unsigned long int *n)
 	int i = 0, *ptr;
 	unsigned long int ac = 0;
 
-	ptr = &(b[1023]);
+	ptr = &(b[2047]);
 	while (*(ptr) != 2)
 	{
 		if (*(ptr) == 1)
