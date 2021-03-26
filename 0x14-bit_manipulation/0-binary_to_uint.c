@@ -10,7 +10,8 @@ unsigned int binary_to_uint(const char *b)
 {
 	const char *t;
 	unsigned int ac = 0;
-	int p, i = 0;
+	int i = 0;
+	double p;
 
 	if (!b)
 		return (0);
@@ -49,9 +50,9 @@ unsigned int binary_to_uint(const char *b)
  * Return: The result of operation.
  */
 
-int _pow(int a)
+double _pow(double a)
 {
-	int i = 1, res = 1;
+	double i = 1, res = 1;
 
 	while (i < a)
 	{
