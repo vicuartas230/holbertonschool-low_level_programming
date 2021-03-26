@@ -9,8 +9,7 @@
 unsigned int binary_to_uint(const char *b)
 {
 	const char *t;
-	unsigned int ac = 0;
-	unsigned long p, i = 0;
+	unsigned int ac = 0, i = 0;
 
 	if (!b)
 		return (0);
@@ -22,41 +21,19 @@ unsigned int binary_to_uint(const char *b)
 		t++;
 		i++;
 	}
-	if (i == 1 && *b == '1')
-		p = 1;
-	else
-		p = _pow(i);
 	while (*b)
 	{
 		if (*b == '1')
 		{
-			ac += p;
+			ac += 1 << i;
 			b++;
-			p /= 2;
+			i--;
 		}
 		else
 		{
-			p /= 2;
 			b++;
+			i--;
 		}
 	}
 	return (ac);
-}
-
-/**
- * _pow - This function returns the power of 2 raised a number.
- * @a: The power number.
- * Return: The result of operation.
- */
-
-unsigned long _pow(unsigned long a)
-{
-	unsigned long i = 1, res = 1;
-
-	while (i < a)
-	{
-		res *= 2;
-		i++;
-	}
-	return (res);
 }
