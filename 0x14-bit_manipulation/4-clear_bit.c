@@ -59,7 +59,6 @@ void dectobin(unsigned long int *n, unsigned long int *b)
  * bintodec - This funtion converts a binary number to decimal.
  * @b: The buffer to read the number allocated.
  * @n: The pointer to the number to change.
- * @pos: The position where the buffer is.
  * Return: Nothing.
  */
 
