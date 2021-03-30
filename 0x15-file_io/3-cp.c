@@ -86,5 +86,6 @@ int main(int ac, char **av)
 		return (-1);
 	rd = read_file(av[1], b);
 	write_file(av[2], b, rd);
+	free(b);
 	return (0);
 }
