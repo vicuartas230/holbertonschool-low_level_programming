@@ -25,7 +25,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	f_d = read(file_des, b, letters);
 	if (f_d == -1)
 		return (0);
-	fdw = write(1, b, f_d);
+	fdw = write(STDOUT_FILENO, b, f_d);
 	if (fdw == -1)
 		return (0);
 	close(file_des);
