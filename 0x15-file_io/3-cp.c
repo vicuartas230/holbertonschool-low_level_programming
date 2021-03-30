@@ -9,7 +9,7 @@
 
 ssize_t read_file(const char *filename, char *buffer)
 {
-	int f, rd, c;
+	int f, rd;
 
 	f = open(filename, O_RDONLY);
 	if (f == -1)
@@ -23,8 +23,7 @@ ssize_t read_file(const char *filename, char *buffer)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 		exit(98);
 	}
-	c = close(f);
-	if (c == -1)
+	if (close(f) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close %d\n", f);
 		exit(100);
@@ -42,7 +41,7 @@ ssize_t read_file(const char *filename, char *buffer)
 
 void write_file(const char *filename, char *buffer, ssize_t rd)
 {
-	int s, wr, c;
+	int s, wr;
 
 	s = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (s == -1)
@@ -56,8 +55,7 @@ void write_file(const char *filename, char *buffer, ssize_t rd)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
 		exit(99);
 	}
-	c = close(s);
-	if (c == -1)
+	if (close(s) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", s);
 		exit(100);
@@ -86,6 +84,5 @@ int main(int ac, char **av)
 		return (-1);
 	rd = read_file(av[1], b);
 	write_file(av[2], b, rd);
-	free(b);
 	return (0);
 }
