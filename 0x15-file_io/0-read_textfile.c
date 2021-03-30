@@ -29,7 +29,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	file_des = open(filename, O_WRONLY);
 	if (file_des == -1)
 		return (0);
-	fdw = write(1, b, letters);
+	fdw = write(1, b, f_d);
 	if (fdw == -1)
 		return (0);
 	close(file_des);
