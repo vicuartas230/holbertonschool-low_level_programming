@@ -19,16 +19,10 @@ ssize_t read_file(const char *filename, char *buffer)
 	}
 	rd = read(f, buffer, INT_MAX);
 	if (rd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
-		exit(98);
-	}
+		return (-1);
 	c = close(f);
 	if (c == -1)
-	{
-		dprintf(STDERR_FILENO, "Can't close fd %d\n", f);
-		exit(100);
-	}
+		return (-2);
 	return (rd);
 }
 
@@ -85,6 +79,16 @@ int main(int ac, char **av)
 	if (b == NULL)
 		return (-1);
 	rd = read_file(av[1], b);
+	if (rd == -1)
+	{
+		dprintf(STDERR_FILEON, "Can't read from file %s\n", av[1]);
+		exit(98);
+	}
+	if (rd == -2)
+	{
+		dprintf(STDERR_FILEON, "Can't close fd %d\n", -1);
+		exit(100);
+	}
 	write_file(av[2], b, rd);
 	return (0);
 }
