@@ -18,7 +18,7 @@ ssize_t read_file(const char *filename, char *buffer)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 		exit(98);
 	}
-	rd = read(f, buffer, INT_MAX);
+	rd = read(f, buffer, SSIZE_MAX);
 	if (rd == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
