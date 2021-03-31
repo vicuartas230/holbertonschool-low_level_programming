@@ -20,7 +20,7 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]),
 		exit(98);
 	rd = read(f, b, BUFSIZ);
-	if (rd == -1)
+	if (rd < 0)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]),
 			close(f),
 		exit(98);
