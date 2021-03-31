@@ -9,7 +9,8 @@
 
 ssize_t read_file(const char *filename, char *buffer)
 {
-	int f, rd;
+	int f;
+	ssize_t rd;
 
 	f = open(filename, O_RDONLY);
 	if (f == -1)
@@ -72,16 +73,13 @@ void write_file(const char *filename, char *buffer, ssize_t rd)
 int main(int ac, char **av)
 {
 	int rd;
-	char *b;
+	char b[1024];
 
 	if (ac != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	b = malloc(1024 * sizeof(char));
-	if (b == NULL)
-		return (-1);
 	rd = read_file(av[1], b);
 	write_file(av[2], b, rd);
 	return (0);
