@@ -19,16 +19,16 @@ int main(int ac, char **av)
 	if (f == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]),
 		exit(98);
-	rd = read(f, b, BUFSIZ);
-	if (rd < 0)
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]),
-			close(f),
-		exit(98);
 	s = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (s == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]),
 			close(f),
 		exit(99);
+	rd = read(f, b, BUFSIZ);
+	if (rd < 0)
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]),
+			close(f),
+		exit(98);
 	wr = write(s, b, rd);
 	if (wr == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]),
