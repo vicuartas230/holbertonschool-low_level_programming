@@ -36,7 +36,7 @@ hash_node_t *add_nodeint(hash_node_t **head, char *key, char *value)
 	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
 		return (0);
-	node->key = key;
+	node->key = strdup(key);
 	if (!value)
 		node->value = NULL;
 	else
