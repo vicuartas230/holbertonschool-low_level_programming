@@ -21,7 +21,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		tmp = ht->array[index];
 		while (tmp)
 		{
-			if (!strcmp((char *)tmp->key, (char *)key))
+			if (!strcmp(tmp->key, key))
 			{
 				free(tmp->value);
 				tmp->value = strdup(value);
@@ -30,20 +30,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 	}
 	else
-		ht->array[index] = add_nodeint(&ht->array[index],
-		(char *)key, (char *)value);
+		ht->array[index] = add_node(ht->array[index], key, value);
 	return (1);
 }
 
 /**
- * add_nodeint - This function adds a new node at the beginning of a list.
+ * add_node - This function adds a new node at the beginning of a list.
  * @head: The first node of the list.
  * @key: First element of the node.
  * @value: Second element of the node.
  * Return: The pointer to new node.
  */
 
-hash_node_t *add_nodeint(hash_node_t **head, char *key, char *value)
+hash_node_t *add_node(hash_node_t *head, const char *key, const char *value)
 {
 	hash_node_t *node;
 
@@ -55,7 +54,7 @@ hash_node_t *add_nodeint(hash_node_t **head, char *key, char *value)
 		node->value = NULL;
 	else
 		node->value = strdup(value);
-	node->next = *head;
-	*head = node;
-	return (*head);
+	node->next = head;
+	head = node;
+	return (head);
 }
