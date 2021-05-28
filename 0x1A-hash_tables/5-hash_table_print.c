@@ -22,22 +22,6 @@ void hash_table_print(const hash_table_t *ht)
 			i++;
 			continue;
 		}
-		else
-			break;
-	}
-	if (i == ht->size)
-	{
-		printf("}\n");
-		return;
-	}
-	i = 0;
-	while (i < ht->size)
-	{
-		if (!ht->array[i])
-		{
-			i++;
-			continue;
-		}
 		tmp = ht->array[i];
 		while (tmp)
 		{
