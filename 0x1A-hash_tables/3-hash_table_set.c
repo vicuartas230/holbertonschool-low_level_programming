@@ -30,12 +30,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			tmp = tmp->next;
 		}
 	}
-	else
-	{
-		ht->array[index] = add_node(ht->array[index], key, value);
-		return (1);
-	}
-	return (0);
+	ht->array[index] = add_node(ht->array[index], key, value);
+	return (1);
 }
 
 /**
