@@ -11,13 +11,27 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index = 0;
+	hash_node_t *tmp = NULL;
 
 	if (!ht || !key)
 		return (0);
-	if (!value)
-		value = "";
 	index = key_index((const unsigned char *)key, ht->size);
-	ht->array[index] = add_nodeint(&ht->array[index], (char *)key, (char *)value);
+	if (ht->array[index])
+	{
+		tmp = ht->array[index];
+		while (tmp)
+		{
+			if (!strcmp((char *)tmp->key, (char *)key))
+			{
+				free(tmp->value);
+				tmp->value = strdup(value);
+			}
+			tmp = tmp->next;
+		}
+	}
+	else
+		ht->array[index] = add_nodeint(&ht->array[index],
+		(char *)key, (char *)value);
 	return (1);
 }
 
