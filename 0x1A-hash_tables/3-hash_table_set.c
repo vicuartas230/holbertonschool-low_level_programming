@@ -23,10 +23,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		while (tmp)
 		{
 			if (!_strcmp((char *)tmp->key, (char *)key))
-			{
-				free(tmp->value);
 				tmp->value = strdup(value);
-			}
 			tmp = tmp->next;
 		}
 	}
