@@ -37,7 +37,10 @@ hash_node_t *add_nodeint(hash_node_t **head, char *key, char *value)
 	if (node == NULL)
 		return (0);
 	node->key = key;
-	node->value = strdup(value);
+	if (!value)
+		node->value = NULL;
+	else
+		node->value = strdup(value);
 	node->next = *head;
 	*head = node;
 	return (*head);
