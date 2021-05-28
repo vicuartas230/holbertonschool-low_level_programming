@@ -12,8 +12,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index = 0;
 
-	if (!ht)
+	if (!ht || !key)
 		return (0);
+	if (!value)
+		value = "";
 	index = key_index((const unsigned char *)key, ht->size);
 	ht->array[index] = add_nodeint(&ht->array[index], (char *)key, (char *)value);
 	return (1);
