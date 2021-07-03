@@ -13,6 +13,4 @@ oclean:
 fclean:
 	$(RM) *~ $(NAME)
 	$(RM) $(OBJ)
-re:
-	$(RM) $(OBJ)
-	$(MAKE) all -m 4-Makefile
+re: all oclean
