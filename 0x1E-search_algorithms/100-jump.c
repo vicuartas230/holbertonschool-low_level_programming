@@ -43,7 +43,7 @@ int second_linear_search(int *array, int low, int high, size_t size, int value)
 {
 	int i = low;
 
-	while (i <= high && i < (int)size)
+	while (i <= high && i < (int)size && high < (int)size)
 	{
 		if (array[i] == value)
 		{
@@ -53,5 +53,6 @@ int second_linear_search(int *array, int low, int high, size_t size, int value)
 		printf("Value checked array[%d] = [%d]\n", i, array[i]);
 		i++;
 	}
+	printf("Value checked array[%d] = [%d]\n", low, array[low]);
 	return (-1);
 }
