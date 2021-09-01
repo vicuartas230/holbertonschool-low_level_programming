@@ -74,6 +74,8 @@ listint_t *list_linear_search(listint_t *low, listint_t *high, int value)
 			return (low);
 		low = low->next;
 	}
+	if (low->index == high->index && value == low->n)
+		return (low);
 	printf("Value checked at index [%ld] = [%d]\n", low->index, low->n);
 	return (NULL);
 }
