@@ -20,7 +20,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	upper = jumps(lower, block);
 	while (upper && !(lower->n <= value && value <= upper->n))
 	{
-		printf("Value checked array[%ld] = [%d]\n", upper->index, upper->n);
+		printf("Value checked at index [%ld] = [%d]\n", upper->index, upper->n);
 		lower = upper;
 		upper = jumps(upper, block);
 	}
@@ -31,7 +31,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 			tmp = tmp->next;
 		upper = tmp;
 	}
-	printf("Value checked array[%ld] = [%d]\n", upper->index, upper->n);
+	printf("Value checked at index [%ld] = [%d]\n", upper->index, upper->n);
 	printf("Value found between indexes [%ld] and [%ld]\n",
 	lower->index, upper->index);
 	return (list_linear_search(lower, upper, value));
@@ -67,7 +67,7 @@ listint_t *jumps(listint_t *tmp, size_t block)
 
 listint_t *list_linear_search(listint_t *low, listint_t *high, int value)
 {
-	while (low->n < high->n)
+	while (low->index < high->index)
 	{
 		printf("Value checked at index [%ld] = [%d]\n", low->index, low->n);
 		if (low->n == value)
