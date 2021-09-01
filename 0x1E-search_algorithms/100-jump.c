@@ -22,6 +22,8 @@ int jump_search(int *array, size_t size, int value)
 		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 		i = block;
 		block += sqrt(size);
+		if (block >= (int)size)
+			break;
 	}
 	printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 	printf("Value found between indexes [%ld] and [%d]\n", i, block);
@@ -41,18 +43,18 @@ int jump_search(int *array, size_t size, int value)
 
 int second_linear_search(int *array, int low, int high, size_t size, int value)
 {
-	int i = low;
-
-	while (i <= high && i < (int)size && high < (int)size)
+	while (low <= high)
 	{
-		if (array[i] == value)
+		if (array[low] == value)
 		{
-			printf("Value checked array[%d] = [%d]\n", i, array[i]);
-			return (i);
+			printf("Value checked array[%d] = [%d]\n", low, array[low]);
+			return (low);
 		}
-		printf("Value checked array[%d] = [%d]\n", i, array[i]);
-		i++;
+		if (low < (int)size)
+			printf("Value checked array[%d] = [%d]\n", low, array[low]);
+		low++;
 	}
-	printf("Value checked array[%d] = [%d]\n", low, array[low]);
+	if (low < (int)size)
+		printf("Value checked array[%d] = [%d]\n", low, array[low]);
 	return (-1);
 }
