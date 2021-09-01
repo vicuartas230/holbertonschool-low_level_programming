@@ -43,9 +43,7 @@ int recursive_binary_search(int *array, int high, int low, int value)
 		middle = (high + low) / 2;
 		if (array[middle] == value && array[middle - 1] != value)
 			return (middle);
-		else if (value < array[middle] && array[middle - 1] != value)
-			return (recursive_binary_search(array, middle - 1, low, value));
-		else if (value <= array[middle] && array[middle - 1] == value)
+		else if (value <= array[middle])
 			return (recursive_binary_search(array, middle, low, value));
 		return (recursive_binary_search(array, high, middle + 1, value));
 	}
