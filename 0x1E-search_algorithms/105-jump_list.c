@@ -13,6 +13,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 {
 	size_t block = 0;
 	listint_t *lower = list, *upper = NULL, *tmp = NULL;
+	int i = 0;
 
 	if (!list)
 		return (NULL);
@@ -29,17 +30,22 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 		tmp = lower;
 		while (tmp->next)
 			tmp = tmp->next;
-		upper = tmp;
+		i = lower->index;
+		if (size > 3)
+			printf("Value checked at index [%ld] = [%d]\n", tmp->index, tmp->n);
+		else
+			i--;
+		printf("Value found between indexes [%d] and [%ld]\n",
+		i, tmp->index);
+		return (list_linear_search(lower, tmp, value));
 	}
-	if (size > 3)
+	else
 	{
 		printf("Value checked at index [%ld] = [%d]\n", upper->index, upper->n);
 		printf("Value found between indexes [%ld] and [%ld]\n",
 		lower->index, upper->index);
+		return (list_linear_search(lower, upper, value));
 	}
-	else
-		printf("Value found between indexes [0] and [%ld]\n", upper->index);
-	return (list_linear_search(lower, upper, value));
 }
 
 /**
