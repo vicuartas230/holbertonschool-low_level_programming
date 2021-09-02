@@ -44,7 +44,7 @@ int jump_search(int *array, size_t size, int value)
 
 int second_linear_search(int *array, int low, int high, size_t size, int value)
 {
-	while (low <= high)
+	while (low <= high && low < (int)size)
 	{
 		if (array[low] == value)
 		{
