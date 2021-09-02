@@ -12,7 +12,7 @@
 int jump_search(int *array, size_t size, int value)
 {
 	size_t i = 0;
-	int block = 0;
+	int block = 0, found = 0;
 
 	if (!array)
 		return (-1);
@@ -27,7 +27,8 @@ int jump_search(int *array, size_t size, int value)
 	}
 	printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 	printf("Value found between indexes [%ld] and [%d]\n", i, block);
-	return (second_linear_search(array, i, block, size, value));
+	found = second_linear_search(array, i, block, size, value);
+	return (found);
 }
 
 /**
