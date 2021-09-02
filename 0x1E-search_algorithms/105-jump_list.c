@@ -61,6 +61,8 @@ listint_t *jumps(listint_t *tmp, size_t block)
 
 	while (i < block)
 	{
+		if (!tmp->next)
+			return (NULL);
 		tmp = tmp->next;
 		i++;
 	}
